@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La boda más esperada 🌻</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           VARIABLES
+        ============================== */
+
+        :root {
+            --crema: #f7f1e3;
+            --crema-claro: #fffdf8;
+            --verde: #526b4d;
+            --verde-oscuro: #30422e;
+            --dorado: #c79a35;
+            --amarillo: #e2b52f;
+            --texto: #3d3b34;
+            --blanco: #ffffff;
+        }
+
+
+        /* ==============================
+           GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: var(--crema);
+            color: var(--texto);
+            overflow-x: hidden;
+        }
+
+        section {
+            position: relative;
+            overflow: visible;
+        }
+
+        h1, h2, h3 {
+            font-family: "Cormorant Garamond", serif;
+        }
+
+
+        /* ==============================
+           PORTADA
+        ============================== */
+
+        .portada {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(38, 53, 35, 0.38),
+                    rgba(38, 53, 35, 0.38)
+                ),
+                url("opcion3.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 30px;
+        }
+
+        .portada-contenido {
+            max-width: 850px;
+            animation: aparecer 1.8s ease;
+        }
+
+        .pequeno-texto {
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .portada h1 {
+            font-family: "Great Vibes", cursive;
+            font-size: clamp(70px, 11vw, 140px);
+            font-weight: 400;
+            line-height: 1;
+            text-shadow: 0 3px 15px rgba(0,0,0,.25);
+        }
+
+        .portada h2 {
+            font-size: clamp(24px, 4vw, 45px);
+            font-weight: 400;
+            margin-top: 15px;
+            letter-spacing: 4px;
+        }
+
+        .fecha-portada {
+            margin-top: 35px;
+            font-size: 15px;
+            letter-spacing: 4px;
+        }
+
+        .flecha {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-size: 25px;
+
+            animation: bajar 1.5s infinite;
+        }
+
+
+        /* ==============================
+           GIRASOLES DECORATIVOS
+        ============================== */
+
+        .girasol {
+            position: absolute;
+            width: 180px;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .girasol img {
+            width: 100%;
+            display: block;
+        }
+
+        .girasol-1 {
+            left: -45px;
+            top: -60px;
+            transform: rotate(-20deg);
+        }
+
+        .girasol-2 {
+            right: -45px;
+            bottom: -60px;
+            transform: rotate(20deg);
+        }
+
+
+        /* ==============================
+           INTRODUCCIÓN
+        ============================== */
+
+        .intro {
+            background: var(--crema-claro);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .ornamento {
+            color: var(--dorado);
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .intro h2 {
+            font-size: clamp(42px, 6vw, 70px);
+            color: var(--verde-oscuro);
+            font-weight: 500;
+        }
+
+        .intro p {
+            max-width: 650px;
+            margin: 25px auto 0;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           NOVIOS
+        ============================== */
+
+        .novios {
+            background: var(--verde);
+            color: white;
+            padding: 130px 20px;
+            text-align: center;
+        }
+
+        .novios h2 {
+            font-size: clamp(45px, 7vw, 75px);
+            font-weight: 400;
+        }
+
+        .novios-subtitulo {
+            margin-top: 10px;
+            letter-spacing: 3px;
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: .8;
+        }
+
+        .pareja {
+            max-width: 1100px;
+            margin: 70px auto 0;
+
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .persona h3 {
+            font-family: "Great Vibes", cursive;
+            font-size: 55px;
+            font-weight: 400;
+        }
+
+        .persona p {
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .corazon {
+            font-size: 45px;
+            color: var(--amarillo);
+        }
+
+
+        /* ==============================
+           FECHA
+        ============================== */
+
+        .fecha {
+            background: var(--crema);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .fecha h2 {
+            color: var(--verde-oscuro);
+            font-size: 65px;
+            font-weight: 500;
+        }
+
+        .fecha-grande {
+            font-family: "Cormorant Garamond", serif;
+            color: var(--dorado);
+
+            font-size: clamp(60px, 10vw, 120px);
+            font-weight: 600;
+
+            margin: 30px 0;
+        }
+
+        .fecha-info {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .dato {
+            min-width: 180px;
+        }
+
+        .dato span {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--verde);
+            margin-bottom: 10px;
+        }
+
+        .dato strong {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+
+        /* ==============================
+           HISTORIA
+        ============================== */
+
+        .historia {
+            background: var(--crema-claro);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .historia-contenido {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .historia h2 {
+            color: var(--verde-oscuro);
+            font-size: 65px;
+        }
+
+        .historia p {
+            margin-top: 30px;
+            line-height: 2;
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           RSVP
+        ============================== */
+
+        .rsvp {
+            background:
+                linear-gradient(
+                    rgba(48,66,46,.94),
+                    rgba(48,66,46,.94)
+                ),
+                url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            padding: 120px 20px;
+            color: white;
+        }
+
+        .rsvp-contenedor {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .rsvp h2 {
+            font-size: 70px;
+            font-weight: 400;
+        }
+
+        .rsvp-subtitulo {
+            margin-top: 15px;
+            opacity: .85;
+        }
+
+        .formulario {
+            margin-top: 50px;
+            background: rgba(255,255,255,.1);
+            backdrop-filter: blur(12px);
+
+            padding: 40px;
+
+            border: 1px solid rgba(255,255,255,.2);
+        }
+
+        .campo {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            border: none;
+            padding: 15px;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+
+            background: rgba(255,255,255,.92);
+            color: var(--texto);
+
+            outline: none;
+        }
+
+        .opciones {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .opcion {
+            border: 1px solid rgba(255,255,255,.4);
+            padding: 18px;
+            cursor: pointer;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .opcion:hover {
+            background: rgba(255,255,255,.12);
+        }
+
+        .opcion input {
+            display: none;
+        }
+
+        .opcion.seleccionada {
+            background: var(--dorado);
+            border-color: var(--dorado);
+        }
+
+        .motivo {
+            display: none;
+        }
+
+        .motivo.visible {
+            display: block;
+            animation: aparecer .5s ease;
+        }
+
+        .boton {
+            width: 100%;
+            border: none;
+
+            padding: 18px;
+
+            background: var(--dorado);
+            color: white;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .boton:hover {
+            background: var(--amarillo);
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           AGRADECIMIENTO
+        ============================== */
+
+        .gracias {
+            min-height: 80vh;
+
+            background: var(--crema);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+
+        .gracias-contenido {
+            max-width: 700px;
+        }
+
+        .gracias h2 {
+            font-family: "Great Vibes", cursive;
+            font-size: clamp(65px, 10vw, 120px);
+            color: var(--verde);
+            font-weight: 400;
+        }
+
+        .gracias p {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: var(--verde-oscuro);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+
+        /* ==============================
+           ANIMACIONES
+        ============================== */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bajar {
+            0%,100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 10px);
+            }
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            .pareja {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .corazon {
+                font-size: 35px;
+            }
+
+            .persona h3 {
+                font-size: 48px;
+            }
+
+            .fecha-info {
+                gap: 35px;
+            }
+
+            .formulario {
+                padding: 25px;
+            }
+
+            .opciones {
+                grid-template-columns: 1fr;
+            }
+
+            .girasol {
+                width: 130px;
+            }
+
+            .girasol-1 {
+                left: -45px;
+            }
+
+            .girasol-2 {
+                right: -45px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         PORTADA
+    =========================================== -->
+
+    <section class="portada">
+
+        <div class="portada-contenido">
+
+            <div class="pequeno-texto">
+                Al finnn
+            </div>
+
+            <h1>Nos Casamos</h1>
+
+            <h2>Darlisa & Jordan</h2>
+
+            <div class="fecha-portada">
+                10 · ENERO · 2027
+            </div>
+
+        </div>
+
+        <div class="flecha">
+            ↓
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         INTRO
+    =========================================== -->
+
+    <section class="intro">
+
+        <div class="girasol girasol-1">
+            <img src="https://pngimg.com/uploads/sunflower/sunflower_PNG13390.png">
+        </div>
+
+        <div class="ornamento">
+            ✦
+        </div>
+
+        <h2>MATEO 19:6</h2>
+
+        <p>
+            Así que no son ya más dos,
+            sino una sola carne; por tanto, lo que
+            Dios juntó, no lo separe el hombre
+        </p>
+
+    </section>
+
+
+    <!-- ==========================================
+         NOVIOS
+    =========================================== -->
+
+    <section class="novios">
+
+        <div class="girasol girasol-2">
+            <img src="https://pngimg.com/uploads/sunflower/sunflower_PNG13390.png">
+        </div>
+
+        <div class="novios-subtitulo">
+            Los protagonistas
+        </div>
+
+        <h2>Te invitan:</h2>
+
+        <div class="pareja">
+
+            <div class="persona">
+
+                <h3>Darlisa Reyes.</h3>
+
+                <p>La novia</p>
+
+            </div>
+
+
+            <div class="corazon">
+                ♡
+            </div>
+
+
+            <div class="persona">
+
+                <h3>Jordanel Reyes.</h3>
+
+                <p>El novio</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         FECHA Y LUGAR
+    =========================================== -->
+
+    <section class="fecha">
+
+        <div class="ornamento">
+            ✦
+        </div>
+
+        <h2>Guarda la fecha</h2>
+
+        <div class="fecha-grande">
+            10  .  Enero  .  2027
+        </div>
+
+        <div class="fecha-info">
+
+            <div class="dato">
+
+                <span>Hora</span>
+
+                <strong>3:00 PM</strong>
+
+            </div>
+
+
+            <div class="dato">
+
+                <span>Lugar</span>
+
+                <strong>Campamento Vivir como Jesús</strong>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         HISTORIA
+    =========================================== -->
+
+    <section class="historia">
+
+        <div class="historia-contenido">
+
+            <div class="ornamento">
+                🌻
+            </div>
+
+            <h2>Por la gracia <br>del Señor</h2>
+
+            <p>
+                Después de tantos momentos compartidos, risas,
+                sueños y recuerdos, decidimos dar el siguiente paso.
+                Queremos celebrar este día rodeados de las personas
+                que amamos y que han formado parte de nuestra historia.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         RSVP
+    =========================================== -->
+
+    <section class="rsvp">
+
+        <div class="rsvp-contenedor">
+
+            <h2>¿Nos acompañas?</h2>
+
+            <p class="rsvp-subtitulo">
+                Confírmanos tu asistencia
+            </p>
+
+
+            <form 
+    class="formulario" 
+    id="rsvpForm"
+    action="https://formsubmit.co/kgmendoza09@gmail.com"
+    method="POST"
+>
+
+<input type="hidden" name="_subject" value="Nueva confirmación de boda 🌻">
+<input type="hidden" name="_captcha" value="false">
+
+
+                <div class="campo">
+
+                    <label for="nombre">
+                        Tu nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Escribe tu nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        ¿Asistirás?
+                    </label>
+
+                    <div class="opciones">
+
+                        <label class="opcion" id="opcionSi">
+
+                            <input
+                                type="radio"
+                                name="asistencia"
+                                value="Sí asistiré"
+                                required
+                            >
+
+                            Sí, asistiré 💛
+
+                        </label>
+
+
+                        <label class="opcion" id="opcionNo">
+
+                            <input
+                                type="radio"
+                                name="asistencia"
+                                value="No podré asistir"
+                            >
+
+                            No podré asistir
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="campo motivo" id="campoMotivo">
+
+                    <label for="motivo">
+                        ¿Quieres expresar el motivo?
+                    </label>
+
+                    <textarea
+                        id="motivo"
+                        name="motivo"
+                        rows="5"
+                        placeholder="Escribe un mensaje para los novios..."
+                    ></textarea>
+
+                </div>
+
+
+                <button class="boton" type="submit">
+                    Enviar confirmación
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         GRACIAS
+    =========================================== -->
+
+    <section class="gracias">
+
+        <div class="gracias-contenido">
+
+            <div class="ornamento">
+                🌻
+            </div>
+
+            <h2>Gracias</h2>
+
+            <p>
+                Gracias por tomarte el tiempo de confirmar tu asistencia
+                y por formar parte de este momento tan especial.
+            </p>
+
+            <p>
+                Con cariño,<br>
+                <strong>Darlisa & Jordanel</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Darlisa & Jordan · 2027 🌻
+
+    </footer>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        const opcionSi = document.getElementById("opcionSi");
+        const opcionNo = document.getElementById("opcionNo");
+
+        const campoMotivo = document.getElementById("campoMotivo");
+
+        const radios = document.querySelectorAll(
+            'input[name="asistencia"]'
+        );
+
+
+        radios.forEach(radio => {
+
+            radio.addEventListener("change", function() {
+
+                opcionSi.classList.remove("seleccionada");
+                opcionNo.classList.remove("seleccionada");
+
+
+                if (this.value === "Sí asistiré") {
+
+                    opcionSi.classList.add("seleccionada");
+
+                    campoMotivo.classList.remove("visible");
+
+                }
+
+
+                else {
+
+                    opcionNo.classList.add("seleccionada");
+
+                    campoMotivo.classList.add("visible");
+
+                }
+
+            });
+
+        });
+
+
+        document
+            .getElementById("rsvpForm")
+            .addEventListener("submit", function(event) {
+
+              
+                const nombre =
+                    document.getElementById("nombre").value;
+
+
+                const asistencia =
+                    document.querySelector(
+                        'input[name="asistencia"]:checked'
+                    ).value;
+
+
+                const motivo =
+                    document.getElementById("motivo").value;
+
+
+                alert(
+                    `Gracias ${nombre} 💛\n\n` +
+                    `Tu respuesta: ${asistencia}\n\n` +
+                    `¡Tu confirmación ha sido registrada!`
+                );
+
+
+                
+                opcionSi.classList.remove("seleccionada");
+                opcionNo.classList.remove("seleccionada");
+
+                campoMotivo.classList.remove("visible");
+
+            });
+
+    </script>
+
+</body>
+</html>
